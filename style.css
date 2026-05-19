@@ -1,0 +1,359 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #111;
+  color: white;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 46px;
+  padding: 0 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 100;
+}
+
+.logo,
+.logo a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+/* 首页 */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+}
+
+.hero-text {
+  position: absolute;
+  left: 6%;
+  bottom: 9%;
+  z-index: 2;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 15px;
+}
+
+/* 通用页面 */
+
+.page {
+  padding: 120px 6vw 100px;
+  background: #111;
+  min-height: 100vh;
+}
+
+.page-title {
+  margin-bottom: 80px;
+}
+
+.page-title h1 {
+  font-size: 44px;
+  margin-bottom: 12px;
+}
+
+.page-title p {
+  color: #aaa;
+  font-size: 16px;
+}
+
+figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure img {
+  display: block;
+}
+
+figcaption {
+  margin-top: 16px;
+  color: #bbb;
+  font-size: 16px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+/* Fine Art：保持之前比较稳的排版 */
+
+.fine-grid {
+  width: 86vw;
+  max-width: 1350px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 95px 70px;
+  align-items: start;
+}
+
+.fine-grid img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.fine-grid .wide {
+  grid-column: 1 / -1;
+}
+
+.fine-grid .wide img {
+  width: 82%;
+}
+
+.fine-grid .vertical {
+  grid-row: span 2;
+}
+
+.fine-grid .vertical img {
+  width: 78%;
+}
+
+/* Real Estate：小一点、横图舒服、caption 居中 */
+
+.real-grid {
+  width: 88vw;
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 80px 50px;
+}
+
+.real-grid img {
+  width: 100%;
+  max-height: 58vh;
+  height: auto;
+  object-fit: contain;
+}
+
+.real-wide {
+  grid-column: 1 / -1;
+}
+
+.real-wide img {
+  width: 82%;
+}
+
+/* Portrait：保持大，两列，间距更大 */
+
+.portrait-grid {
+  width: 90vw;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 130px 90px;
+}
+
+.portrait-grid img {
+  width: 100%;
+  max-height: 82vh;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Mobile */
+
+@media (max-width: 800px) {
+  nav {
+    padding: 0 16px;
+  }
+
+  nav ul {
+    gap: 14px;
+  }
+
+  nav a {
+    font-size: 11px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .page {
+    padding: 100px 5vw 70px;
+  }
+
+  .page-title {
+    margin-bottom: 60px;
+  }
+
+  .page-title h1 {
+    font-size: 34px;
+  }
+
+  .fine-grid,
+  .real-grid,
+  .portrait-grid {
+    width: 100%;
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .fine-grid .wide,
+  .fine-grid .vertical,
+  .real-wide {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+
+  .fine-grid img,
+  .fine-grid .wide img,
+  .fine-grid .vertical img,
+  .real-grid img,
+  .real-wide img,
+  .portrait-grid img {
+    width: 100%;
+    max-height: none;
+  }
+}
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 8vw;
+}
+
+.contact-content {
+  max-width: 900px;
+}
+
+.contact-content h1 {
+  font-size: 78px;
+  margin-bottom: 36px;
+  letter-spacing: -0.04em;
+}
+
+.contact-description {
+  max-width: 720px;
+  color: #9d9d9d;
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+.contact-icons {
+  display: flex;
+  gap: 34px;
+  margin-top: 70px;
+}
+
+.contact-icons button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 42px;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.contact-icons button:hover {
+  opacity: 0.45;
+  transform: translateY(-2px);
+}
+
+.contact-result {
+  margin-top: 60px;
+  min-height: 120px;
+  font-size: 28px;
+  color: white;
+}
+
+.contact-result a {
+  color: white;
+  text-decoration: none;
+}
+
+.contact-result img {
+  width: 220px;
+  background: white;
+}
+
+@media (max-width: 800px) {
+
+  .contact-page {
+    padding: 100px 7vw;
+  }
+
+  .contact-content h1 {
+    font-size: 48px;
+  }
+
+  .contact-description {
+    font-size: 18px;
+  }
+
+  .contact-icons {
+    gap: 24px;
+  }
+
+  .contact-icons button {
+    font-size: 34px;
+  }
+
+  .contact-result {
+    font-size: 22px;
+  }
+
+  .contact-result img {
+    width: 180px;
+  }
+}

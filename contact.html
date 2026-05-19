@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Contact | Eric Jam Shots</title>
+
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- ICON -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">
+      <a href="index.html">Eric Jam Shots</a>
+    </div>
+
+    <ul>
+      <li><a href="portrait.html">Portrait</a></li>
+      <li><a href="real-estate.html">Real Estate</a></li>
+      <li><a href="fine-art.html">Fine Art</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="contact-page">
+
+    <section class="contact-content">
+
+      <h1>Hi, I'm Eric Wu.</h1>
+
+      <p class="contact-description">
+        Photographer based in Toronto, Canada, focused on portrait,
+        real estate, and fine art photography.
+      </p>
+
+      <!-- ICONS -->
+
+      <div class="contact-icons">
+
+        <button onclick="showContact('gmail')">
+          <i class="fa-regular fa-envelope"></i>
+        </button>
+
+        <button onclick="showContact('instagram')">
+          <i class="fa-brands fa-instagram"></i>
+        </button>
+
+        <button onclick="showContact('wechat')">
+          <i class="fa-brands fa-weixin"></i>
+        </button>
+
+      </div>
+
+      <!-- RESULT -->
+
+      <div class="contact-result" id="contactResult">
+        Click an icon to view contact info.
+      </div>
+
+    </section>
+
+  </main>
+
+  <script>
+    function showContact(type) {
+
+      const box = document.getElementById("contactResult");
+
+      if (type === "gmail") {
+        box.innerHTML = `
+          <a href="mailto:ericjamshots@gmail.com">
+            ericjamshots@gmail.com
+          </a>
+        `;
+      }
+
+      if (type === "instagram") {
+        box.innerHTML = `
+          <a href="https://instagram.com/ericjamshots" target="_blank">
+            @ericjamshots
+          </a>
+        `;
+      }
+
+      if (type === "wechat") {
+        box.innerHTML = `
+          <img src="images/wechat.jpg" alt="WeChat QR Code">
+        `;
+      }
+    }
+  </script>
+
+</body>
+</html>
