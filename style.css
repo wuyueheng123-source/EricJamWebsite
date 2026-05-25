@@ -205,6 +205,24 @@ figcaption {
   object-fit: contain;
 }
 
+/* FEATURED PORTRAIT */
+
+.portrait-wide {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.portrait-wide img {
+  width: 100%;
+  max-width: 1400px;
+  max-height: none;
+}
+
+.portrait-wide figcaption {
+  margin-top: 18px;
+}
+
 /* Mobile */
 
 @media (max-width: 800px) {
